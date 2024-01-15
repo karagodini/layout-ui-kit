@@ -26,3 +26,26 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 })
+
+const rangeInputs = document.querySelectorAll('input[type="range"]')
+let isRTL = document.documentElement.dir === 'rtl'
+
+function handleInputChange(e) {
+    let target = e.target
+    if (e.target.type !== 'range') {
+      target = document.getElementById('range')
+    } 
+    const min = target.min
+    const max = target.max
+    const val = target.value
+    let percentage = (val - min) * 100 / (max - min)
+    if (isRTL) {
+      percentage = (max - val) 
+    }
+    
+    target.style.backgroundSize = percentage + '% 100%'
+  }
+
+  rangeInputs.forEach(input => {
+    input.addEventListener('input', handleInputChange)
+  })

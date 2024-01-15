@@ -27,10 +27,31 @@
     </div>
 
     <div class="container-4">
-        
+        <input type="range" value="70" min="0" max="100" oninput="rangevalue.value=value"/>
+        <output id="rangevalue">70</output>
     </div>
 
+    <div class="container-5">
+        <input type="radio" id="radio1" name="group">
+        <label for="radio1"></label>
+
+        <input type="radio" id="radio2" name="group">
+        <label for="radio2"></label>
+
+        <input type="radio" id="radio3" name="group">
+        <label for="radio3"></label>
+    </div>
     
+    <div class="container-6">
+        <input type="checkbox" id="checkbox1">
+        <div class="custom-checkbox" for="checkbox1"></div>
+
+        <input type="checkbox" id="checkbox2">
+        <div class="custom-checkbox" for="checkbox2"></div>
+
+        <input type="checkbox" id="checkbox3">
+        <div class="custom-checkbox" for="checkbox3"></div>
+    </div>
 
     <script src="index.js"></script>
 </body>
